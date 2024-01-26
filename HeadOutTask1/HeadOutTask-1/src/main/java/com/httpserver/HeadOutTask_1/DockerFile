@@ -1,0 +1,11 @@
+FROM openjdk:11-jre-slim
+
+WORKDIR /app
+
+COPY target/file-server.jar /app/file-server.jar
+
+# Expose port 8080 to the outside world
+EXPOSE 8080
+
+# Specify the command to run on container start
+CMD ["java", "-jar", "file-server.jar"]
